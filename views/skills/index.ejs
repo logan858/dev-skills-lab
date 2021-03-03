@@ -1,12 +1,14 @@
 <%- include("../partials/head") %>
 
     <h1>Skills:</h1>
-    <ul>
+    <ul class="list-group">
     <% skills.forEach(function(x) { %>
-        <li>
+        <li class="list-group-item">
             <a href="/skills/<%=x.language%>"><%= x.language %></a>
             <hr>
     <% }) %>
     </ul>
+
+    <a href="/skills/addskill" id="skills">Add a new skill!</a>
 </body>
 </html>

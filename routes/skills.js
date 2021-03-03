@@ -9,8 +9,11 @@ router.get("/", skillsCtrl.skills)
 router.get("/skills", function(req, res) {
     res.send("working as intended")
 })
+router.get("/addskill", skillsCtrl.addSkill)
+router.post("/new", skillsCtrl.newSkills)
 
-//router.get("/:id", skillsCtrl.skills)
+
+
 router.get("/:id", function(req, res) {
     for(x of skills.getAll()) {
         if (x.language === req.params.id) {

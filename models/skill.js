@@ -1,8 +1,11 @@
 module.exports = {
-    getAll
+    getAll,
+    addSkill
 }
 
-const skills = [
+
+
+let skills = [
     {language: "Javascript", school: "GA"},
     {language: "html", school: "GA"},
     {language: "php", school: "self-taught"},
@@ -11,4 +14,9 @@ const skills = [
 
 function getAll() {
     return skills;
+}
+
+function addSkill(x) {
+    skills.push({language: x})
+    console.log(skills)
 }
