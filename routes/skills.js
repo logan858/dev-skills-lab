@@ -6,11 +6,9 @@ let skills = require("../models/skill")
 
 
 router.get("/", skillsCtrl.skills)
-router.get("/skills", function(req, res) {
-    res.send("working as intended")
-})
 router.get("/addskill", skillsCtrl.addSkill)
 router.post("/new", skillsCtrl.newSkills)
+router.put("/:id", skillsCtrl.updateSkills)
 
 
 
@@ -23,5 +21,8 @@ router.get("/:id", function(req, res) {
     }
     res.send("error message prompt")
 })
+
+router.delete("/:id", skillsCtrl.deleteFunc)
+
 
 module.exports = router;

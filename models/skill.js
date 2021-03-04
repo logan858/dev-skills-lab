@@ -1,6 +1,8 @@
 module.exports = {
     getAll,
-    addSkill
+    addSkill,
+    deleteData,
+    updateStuff
 }
 
 
@@ -20,3 +22,15 @@ function addSkill(x) {
     skills.push({language: x})
     console.log(skills)
 }
+
+function deleteData(x) {
+    const lang = skills.findIndex(skill => skill.language === x)
+    console.log(lang)
+    skills.splice(lang, 1);
+}
+function updateStuff (params, body) {
+    const idx = skills.findIndex(x => x.language === params)
+    if(body) {
+        skills[idx].language = body
+    }
+} 

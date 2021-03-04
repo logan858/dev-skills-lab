@@ -1,7 +1,9 @@
 module.exports = { 
     skills,
     newSkills,
-    addSkill
+    addSkill,
+    deleteFunc,
+    updateSkills
 }
 let Skill = require("../models/skill")
 
@@ -18,5 +20,16 @@ function addSkill(req, res, next) {
 function newSkills(req, res) {
     console.log(req.body)
     Skill.addSkill(req.body.newSkill)
+    res.redirect("/skills")
+}
+
+function deleteFunc(req, res) {
+    console.log(req.params)
+    Skill.deleteData(req.params.id)
+    res.redirect("/skills");
+}
+
+function updateSkills(req, res) {
+    Skill.updateStuff(req.params.id, req.body.update) 
     res.redirect("/skills")
 }
